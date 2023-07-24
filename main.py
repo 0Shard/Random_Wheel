@@ -54,7 +54,7 @@ class SlotMachine(QMainWindow):
         self.timer = QTimer()
         self.timer.timeout.connect(self.update_digits)
 
-        self.countdown = 10  # Countdown time in seconds
+        self.countdown = 5  # Countdown time in seconds
 
     def spin_button_clicked(self):
         if self.timer.isActive():
@@ -66,7 +66,7 @@ class SlotMachine(QMainWindow):
             self.start_countdown()  # Start the countdown
 
     def start_countdown(self):
-        self.countdown = 10
+        self.countdown = 5
         self.update_countdown()
 
     def update_countdown(self):
@@ -75,7 +75,7 @@ class SlotMachine(QMainWindow):
         if self.countdown == 0:
             self.timer.stop()
             self.show_spin_button()
-            winning_number = "1747"
+            winning_number = "0330"
             for i, digit_label in enumerate(self.digits):
                 digit_label.setText(winning_number[i])
             self.show_result_message(winning_number)
